@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Score Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Idle Score</a></div>
+                <ul class="nav-menu">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Assets</a></li>
+                    <li><a href="#">Recommendations</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+                <div class="wallet-status">
+                    <span>Connected: 0x1234...abcd</span>
+                    <button class="cta-button">Disconnect</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="dashboard">
+                <div class="idle-score-section">
+                    <div class="idle-score">
+                        <canvas id="idleScoreChart"></canvas>
+                        <div class="tooltip-icon" title="Your Idle Score indicates how efficiently your assets are being used.">i</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-summary-section">
+                    <h2>Portfolio Summary</h2>
+                    <canvas id="portfolioChart"></canvas>
+                    <div class="total-value">
+                        <h3>Total Portfolio Value</h3>
+                        <p>$12,345.67</p>
+                    </div>
+                </div>
+
+                <div class="asset-breakdown-section">
+                    <h2>Asset Breakdown</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Token</th>
+                                <th>Network</th>
+                                <th>Amount</th>
+                                <th>Value (USD)</th>
+                                <th>Yield Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>USDC</td>
+                                <td>Arbitrum</td>
+                                <td>1,000</td>
+                                <td>$1,000.00</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>OP</td>
+                                <td>OP Mainnet</td>
+                                <td>500</td>
+                                <td>$2,500.00</td>
+                                <td>Active</td>
+                            </tr>
+                            <tr>
+                                <td>ETH</td>
+                                <td>Mode</td>
+                                <td>2</td>
+                                <td>$8,845.67</td>
+                                <td>Inactive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Idle Score. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dummy data for charts
+        const idleScoreData = {
+            labels: ['Idle Score'],
+            datasets: [{
+                data: [75, 25],
+                backgroundColor: ['#00bfff', '#f0f0f0']
+            }]
+        };
+
+        const portfolioData = {
+            labels: ['Arbitrum', 'OP Mainnet', 'Mode'],
+            datasets: [{
+                data: [1000, 2500, 8845.67],
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56']
+            }]
+        };
+
+        // Idle Score Chart
+        const idleScoreCtx = document.getElementById('idleScoreChart').getContext('2d');
+        new Chart(idleScoreCtx, {
+            type: 'doughnut',
+            data: idleScoreData,
+            options: {
+                cutoutPercentage: 70,
+                tooltips: { enabled: false }
+            }
+        });
+
+        // Portfolio Chart
+        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
+        new Chart(portfolioCtx, {
+            type: 'pie',
+            data: portfolioData
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Idle Score</div>
+                <ul class="nav-menu">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Assets</a></li>
+                    <li><a href="#">Recommendations</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+                <div class="wallet-status">
+                    <span>Connected: 0x1234...abcd</span>
+                    <button class="cta-button">Disconnect</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="recommendations">
+                <h1>Investment Opportunities</h1>
+                <div class="filters">
+                    <select id="network-filter">
+                        <option value="all">All Networks</option>
+                        <option value="arbitrum">Arbitrum</option>
+                        <option value="op-mainnet">OP Mainnet</option>
+                        <option value="mode">Mode</option>
+                    </select>
+                    <select id="risk-level-filter">
+                        <option value="all">All Risk Levels</option>
+                        <option value="low">Low Risk</option>
+                        <option value="medium">Medium Risk</option>
+                        <option value="high">High Risk</option>
+                    </select>
+                    <select id="investment-type-filter">
+                        <option value="all">All Types</option>
+                        <option value="staking">Staking</option>
+                        <option value="lending">Lending</option>
+                        <option value="yield-farming">Yield Farming</option>
+                    </select>
+                </div>
+
+                <div class="recommendation-cards">
+                    <div class="card">
+                        <h2>Mode Staking</h2>
+                        <p class="apy">Expected APY: 8%</p>
+                        <p class="description">Stake your assets in the Mode network and earn a stable yield.</p>
+                        <button class="action-button">Invest Now</button>
+                    </div>
+                    <div class="card">
+                        <h2>OP Mainnet Lending</h2>
+                        <p class="apy">Expected APY: 5%</p>
+                        <p class="description">Lend your OP tokens and earn interest over time.</p>
+                        <button class="action-button">Invest Now</button>
+                    </div>
+                    <div class="card">
+                        <h2>Arbitrum Yield Farming</h2>
+                        <p class="apy">Expected APY: 12%</p>
+                        <p class="description">Participate in yield farming on Arbitrum and maximize your returns.</p>
+                        <button class="action-button">Invest Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Idle Score. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

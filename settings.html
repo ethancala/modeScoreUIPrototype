@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Idle Score</div>
+                <ul class="nav-menu">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Assets</a></li>
+                    <li><a href="#">Recommendations</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+                <div class="wallet-status">
+                    <span>Connected: 0x1234...abcd</span>
+                    <button class="cta-button">Disconnect</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="settings">
+                <h1>Settings</h1>
+                <div class="settings-section">
+                    <h2>Preferences</h2>
+                    <div class="settings-item">
+                        <label for="notifications">Notification Settings</label>
+                        <select id="notifications">
+                            <option value="all">All Notifications</option>
+                            <option value="important">Important Only</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+                    <div class="settings-item">
+                        <label for="networks">Preferred Networks</label>
+                        <select id="networks" multiple>
+                            <option value="arbitrum">Arbitrum</option>
+                            <option value="op-mainnet">OP Mainnet</option>
+                            <option value="mode">Mode</option>
+                        </select>
+                    </div>
+                    <div class="settings-item">
+                        <label for="2fa">Two-Factor Authentication</label>
+                        <input type="checkbox" id="2fa">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h2>Account Management</h2>
+                    <div class="settings-item">
+                        <label for="wallets">Connected Wallets</label>
+                        <div id="wallets">
+                            <span>0x1234...abcd</span>
+                            <button class="cta-button">Disconnect</button>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <label for="account-details">Account Details</label>
+                        <div id="account-details">
+                            <p>Email: user@example.com</p>
+                            <p>Username: user123</p>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <button class="cta-button logout-button">Logout</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Idle Score. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
